@@ -1,0 +1,51 @@
+@use "../_setting" as s;
+
+body {
+	background: s.$colorType01;
+	color: #333;
+}
+
+.clearfix{
+	a{
+		text-decoration:none;
+		color: #000;
+		&:hover{
+			text-decoration:none;
+			color: #DDD;
+		}
+	}
+	p a:hover{
+		text-decoration:underline;
+	}
+}
+
+a.over {  
+	-webkit-transition: 0.3s ease-in-out;  
+    -moz-transition: 0.3s ease-in-out;  
+    -o-transition: 0.3s ease-in-out;  
+    transition: 0.3s ease-in-out;  
+	&:hover{
+		 filter: alpha(opacity=50);
+		 -moz-opacity: 0.5;
+		 opacity: 0.5;
+	}
+}
+
+.color{
+	&--type01{
+		color:red;
+	}
+	&--type02{
+		color:s.$colorType01;
+	}
+}
+
+.bg{
+	&--type01{
+		background:red;
+	}
+	&--type02{
+		background:s.$colorType01;
+	}
+}
+

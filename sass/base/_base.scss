@@ -1,0 +1,565 @@
+﻿@charset "utf-8";
+/* =======================================
+
+	Base CSS
+
+ -----------------------------------------
+ 	Reset CSS
+	Structure CSS
+	Basis Decorations CSS
+	Parts CSS
+	
+	[768px Above Layout]
+	
+	Structure CSS Wide_Tablet
+	Text Decorations CSS Wide_Tablet
+	Basis Decorations_Tablet
+	Parts CSS Wide_Tablet
+		
+	[1200px Above Layout]
+ -----------------------------------------
+
+========================================== */
+
+
+/* =======================================
+
+	Browser Reset CSS
+
+========================================== */
+
+body,div,dl,dt,dd,ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+pre,code,form,fieldset,legend,
+p,blockquote,table,th,td,figure {margin: 0; padding: 0;}
+
+@font-face {
+	font-family: "YuGothic-M";
+	font-weight: normal;
+	 src: local("YuGothic-Medium"),
+		  local("Yu Gothic Medium"),
+		  local("YuGothic-Regular");
+}
+
+@font-face {
+	font-family: "YuGothic-B";
+	font-weight: bold;
+	 src: local("YuGothic"),
+		  local("Yu Gothic");
+}
+
+html {
+	font-size: 62.5%;/* 16px x 0.625 = 10px(=1rem) */
+}
+
+body {
+	font-size:3.5vw;
+	font-family: -apple-system, blinkMacSystemFont, YuGothic-M, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	-webkit-text-size-adjust: 100%;
+	font-feature-settings: "palt";
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	::i-block-chrome, body {
+		font-feature-settings: "pkna";
+	}
+}
+
+* html body {height:100%;}
+*:first-child+html body {}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+img {border: 0; vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal;}
+
+ul,dl,ol {text-indent: 0;}
+li {list-style: none; vertical-align: text-top;}
+
+address,caption,cite,code,dfn,em,strong,th,var {font-style: normal; font-weight: normal;}
+
+sup {vertical-align: text-top;}
+sub {vertical-align: text-bottom;}
+
+input,textarea,select {font-family: inherit; font-size: inherit; font-weight:inherit;}
+* html input,* html textarea,* html select {font-size: 100%;}
+*:first-child+html+input,*:first-child html+textarea,*:first-child+html select {font-size: 100%;}
+
+table {border-collapse: collapse; border-spacing: 0; font-size: inherit;}
+th,td {text-align: left; vertical-align: top;}
+caption {text-align: left;}
+
+pre,code,kbd,samp,tt {font-family: monospace;}
+* html pre,* html code,* html kbd,* html samp,* html tt {font-size: 100%; line-height: 100%;}
+*:first-child+html pre,*:first-child html+code,*:first-child html+kbd,*:first-child+html+samp,*:first-child+html tt {font-size: 108%; line-height: 100%;}
+
+input,select,textarea {font-size: 100%; font-family: Verdana, Helvetica, sans-serif;}
+
+
+
+/* =======================================
+
+	Structure CSS
+
+========================================== */
+
+body {
+	_display: inline;
+	_zoom:1;
+}
+
+.inBase {
+	width: 90%;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
+.inBase:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 100%;
+	overflow:hidden;
+}
+
+.hidden-all{ display:none !important; }
+.hidden-sp{ display:none !important; }
+.is-smallScreen .hidden-sp{ display:none; }
+
+.contents__sub { padding:0 7%; }
+.contents__sub.is-m-wide { padding:0; }
+
+.w10 { width:10%; }
+.w15 { width:15%; }
+.w20 { width:20%; }
+.w25 { width:25%; }
+.w30 { width:30%; }
+.w35 { width:35%; }
+.w40 { width:40%; }
+.w45 { width:45%; }
+.w50 { width:50%; }
+.w55 { width:55%; }
+.w60 { width:60%; }
+.w65 { width:65%; }
+.w70 { width:70%; }
+.w75 { width:75%; }
+.w80 { width:80%; }
+.w85 { width:85%; }
+.w90 { width:90%; }
+.w95 { width:95%; }
+.w100 { width:100%; }
+.wide { width:100%; }
+.wide-sp { width:100%; }
+.wide-max { max-width:100%; }
+
+.h100 { height:100%; }
+
+/* =======================================
+
+	Basis Decorations CSS
+
+========================================== */
+
+
+/* Inner Reset  */
+#contents th p, #contents th li, #contents th dt, #contents th dd,
+#contents td p, #contents td li, #contents td dt, #contents td dd,
+#contents li p, #contents li li, #contents li dt, #contents li dd,
+#contents dt p, #contents dt li, #contents dt dt, #contents dt dd,
+#contents dd p, #contents dd li, #contents dd dt, #contents dd dd {
+	font-size: 100%;
+}
+
+p, address, th, td { line-height: 1.7; }
+li, dt, dd, figcaption{ line-height: 1.7; }
+
+#contents strong { font-weight: bold; }
+#contents em { font-style: italic; }
+
+.clear { clear:both; }
+.clear-sp { clear:both; }
+
+.tC { text-align:center; }
+.tR { text-align:right; }
+.tL { text-align:left; }
+
+.pL-all { float:left; }
+.pR-all { float:right; }
+
+#contents .sS { font-size:0.85em; }
+#contents .sB { font-size:1.24em; }
+
+.sP-xl	{ padding-bottom:5.6rem; }
+.sP-l	{ padding-bottom:2.8rem; }
+.sP		{ padding-bottom:1.4rem; }
+.sP-s	{ padding-bottom:0.7rem; }
+.sP-xs	{ padding-bottom:0.35rem; }
+
+.sP-xl-r{ padding-right:5.6rem; }
+.sP-l-r	{ padding-right:2.8rem; }
+.sP-m-r	{ padding-right:1.4rem; }
+.sP-s-r	{ padding-right:0.7rem; }
+.sP-xs-r{ padding-right:0.35rem; }
+
+.sP-xl-l{ padding-left:5.6rem; }
+.sP-l-l	{ padding-left:2.8rem; }
+.sP-m-l	{ padding-left:1.4rem; }
+.sP-s-l	{ padding-left:0.7rem; }
+.sP-xs-l{ padding-left:0.35rem; }
+
+.sP-xl-t{ padding-top:5.6rem; }
+.sP-l-t	{ padding-top:2.8rem; }
+.sP-m-t	{ padding-top:1.4rem; }
+.sP-s-t	{ padding-top:0.7rem; }
+.sP-xs-t{ padding-top:0.35rem; }
+
+.sP-xl-a{ padding:5.6rem; }
+.sP-l-a	{ padding:2.8rem; }
+.sP-m-a	{ padding:1.4rem; }
+.sP-s-a	{ padding:0.7rem; }
+.sP-xs-a{ padding:0.35rem; }
+
+.sM-xl	{ margin-bottom:5.6rem; }
+.sM-l	{ margin-bottom:2.8rem; }
+.sM	{ margin-bottom:1.4rem; }
+.sM-s	{ margin-bottom:0.7rem; }
+.sM-xs	{ margin-bottom:0.35rem; }
+
+.sM-xl-r{ margin-right:5.6rem; }
+.sM-l-r	{ margin-right:2.8rem; }
+.sM-m-r	{ margin-right:1.4rem; }
+.sM-s-r	{ margin-right:0.7rem; }
+.sM-xs-r{ margin-right:0.35rem; }
+
+.sM-xl-l{ margin-left:5.6rem; }
+.sM-l-l	{ margin-left:2.8rem; }
+.sM-m-l	{ margin-left:1.4rem; }
+.sM-s-l	{ margin-left:0.7rem; }
+.sM-xs-l{ margin-left:0.35rem; }
+
+.sM-xl-t{ margin-top:5.6rem; }
+.sM-l-t	{ margin-top:2.8rem; }
+.sM-m-t	{ margin-top:1.4rem; }
+.sM-s-t	{ margin-top:0.7rem; }
+.sM-xs-t{ margin-top:0.35rem; }
+
+.sM-xl-a{ margin:5.6rem; }
+.sM-l-a	{ margin:2.8rem; }
+.sM-m-a	{ margin:1.4rem; }
+.sM-s-a	{ margin:0.7rem; }
+.sM-xs-a{ margin:0.35rem; }
+
+.sC { margin-right:auto; margin-left:auto; display:block;}
+.iB { display:inline-block; }
+.fC {display: flex; align-items: center; }
+
+figcaption{ padding-top:0.8rem; clear:both; text-align:center; }
+
+i{ font-family:FontAwesome; font-style:normal;}
+
+.fC {display: flex; align-items: center; }
+
+a {
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+.is-flip-horizontal {
+    transform: scale(-1, 1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.is-flip-vertical {
+    transform: scale(1, -1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+}
+
+.breadthScrollBox{
+  	white-space:nowrap;
+	overflow-x: scroll;
+}
+
+/* =======================================
+
+	Parts CSS
+
+========================================== */
+/* Img
+------------------------------------------ */
+.rightBox {
+	clear:both;
+	float:right;
+	margin:0 0 0.8rem 20px;
+	display:inline;
+}
+
+.leftBox {
+	clear:both;
+	float:left;
+	margin:0 20px 0.8rem 0;
+	display:inline;
+}
+
+/* ===================================================================================================================================================================================================
+
+	768px以上で適用される　レイアウトの指定(タブレット用)
+
+=================================================================================================================================================================================================== */
+@media print, screen and (min-width: 768px) {
+
+/* =======================================
+
+	Structure CSS Wide_Tablet
+
+========================================== */
+body { min-width:768px; font-size:1.4vw;}　/* 768pxに全体を収縮 広げる時は100.8remに変える */
+.inBase { width: 768px; }　/* 768pxに全体を収縮 */
+
+.hidden-sp{ display:block !important; }
+br.hidden-sp{ display:inline !important; }
+.hidden-pc{ display:none !important; }
+
+.contents__main {
+	width:70%;
+	display:block;
+}
+
+.contents__sub {
+	width:25%;
+	display:block;
+	padding:0;
+}
+
+#pageTopFix.is-scroll{
+	width:100%;
+	position: fixed;
+	top:0;
+	left:0; 
+	padding:0 0;
+	transition: all .6s ease;
+}
+
+#pageTopFix{ overflow:visible !important; }
+
+.wide-sp { width:auto; }
+.w10-pc { width:10%; }
+.w15-pc { width:15%; }
+.w20-pc { width:20%; }
+.w25-pc { width:25%; }
+.w30-pc { width:30%; }
+.w35-pc { width:35%; }
+.w40-pc { width:40%; }
+.w45-pc { width:45%; }
+.w50-pc { width:50%; }
+.w55-pc { width:55%; }
+.w60-pc { width:60%; }
+.w65-pc { width:65%; }
+.w70-pc { width:70%; }
+.w75-pc { width:75%; }
+.w80-pc { width:80%; }
+.w85-pc { width:85%; }
+.w90-pc { width:90%; }
+.w95-pc { width:95%; }
+.w100-pc { width:100%; }
+
+/* =======================================
+
+	Basis Decorations CSS Wide_Tablet
+
+========================================== */
+.wide.cancell { width:auto; }
+
+.pL { float:left; }
+.pR { float:right; }
+
+.tC-pc { text-align:center; } 
+.tR-pc { text-align:right; } 
+.tL-pc { text-align:left; } 
+
+
+
+.sP-xl	{ padding-bottom:10rem; }
+.sP-l	{ padding-bottom:5rem; }
+.sP	{ padding-bottom:2.5rem; }
+.sP-s	{ padding-bottom:1.25rem; }
+.sP-xs	{ padding-bottom:0.625rem; }
+
+.sP-xl-r{ padding-right:10rem; }
+.sP-l-r	{ padding-right:5rem; }
+.sP-m-r	{ padding-right:2.5rem; }
+.sP-s-r	{ padding-right:1.25rem; }
+.sP-xs-r{ padding-right:0.625rem; }
+
+.sP-xl-l{ padding-left:10rem; }
+.sP-l-l	{ padding-left:5rem; }
+.sP-m-l	{ padding-left:2.5rem; }
+.sP-s-l	{ padding-left:1.25rem; }
+.sP-xs-l{ padding-left:0.625rem; }
+
+.sP-xl-t{ padding-top:10rem; }
+.sP-l-t	{ padding-top:5rem; }
+.sP-m-t	{ padding-top:2.5rem; }
+.sP-s-t	{ padding-top:1.25rem; }
+.sP-xs-t{ padding-top:0.625rem; }
+
+.sP-xl-a{ padding:10rem; }
+.sP-l-a	{ padding:5rem; }
+.sP-m-a	{ padding:2.5rem; }
+.sP-s-a	{ padding:1.25rem; }
+.sP-xs-a{ padding:0.625rem; }
+
+.sM-xl	{ margin-bottom:10rem; }
+.sM-l	{ margin-bottom:5rem; }
+.sM	{ margin-bottom:2.5rem; }
+.sM-s	{ margin-bottom:1.25rem; }
+.sM-xs	{ margin-bottom:0.625rem; }
+
+.sM-xl-r{ margin-right:10rem; }
+.sM-l-r	{ margin-right:5rem; }
+.sM-m-r	{ margin-right:2.5rem; }
+.sM-s-r	{ margin-right:1.25rem; }
+.sM-xs-r{ margin-right:0.625rem; }
+
+.sM-xl-l{ margin-left:10rem; }
+.sM-l-l	{ margin-left:5rem; }
+.sM-m-l	{ margin-left:2.5rem; }
+.sM-s-l	{ margin-left:1.25rem; }
+.sM-xs-l{ margin-left:0.625rem; }
+
+.sM-xl-t{ margin-top:10rem; }
+.sM-l-t	{ margin-top:5rem; }
+.sM-m-t	{ margin-top:2.5rem; }
+.sM-s-t	{ margin-top:1.25rem; }
+.sM-xs-t{ margin-top:0.625rem; }
+
+.sM-xl-a{ margin:10rem; }
+.sM-l-a	{ margin:5rem; }
+.sM-m-a	{ margin:2.5rem; }
+.sM-s-a	{ margin:1.25rem; }
+.sM-xs-a{ margin:0.625rem; }
+
+.sP-pc-xl	{ padding-bottom:10rem; }
+.sP-pc-l	{ padding-bottom:5rem; }
+.sP-pc		{ padding-bottom:2.5rem; }
+.sP-pc-s	{ padding-bottom:1.25rem; }
+.sP-pc-xs	{ padding-bottom:0.625rem; }
+
+.sP-pc-xl-r	{ padding-right:10rem; }
+.sP-pc-l-r	{ padding-right:5rem; }
+.sP-pc-m-r	{ padding-right:2.5rem; }
+.sP-pc-s-r	{ padding-right:1.25rem; }
+.sP-pc-xs-r	{ padding-right:0.625rem; }
+
+.sP-pc-xl-l	{ padding-left:10rem; }
+.sP-pc-l-l	{ padding-left:5rem; }
+.sP-pc-m-l	{ padding-left:2.5rem; }
+.sP-pc-s-l	{ padding-left:1.25rem; }
+.sP-pc-xs-l	{ padding-left:0.625rem; }
+
+.sP-pc-xl-t	{ padding-top:10rem; }
+.sP-pc-l-t	{ padding-top:5rem; }
+.sP-pc-m-t	{ padding-top:2.5rem; }
+.sP-pc-s-t	{ padding-top:1.25rem; }
+.sP-pc-xs-	t{ padding-top:0.625rem; }
+
+.sP-pc-xl-a	{ padding:10rem; }
+.sP-pc-l-a	{ padding:5rem; }
+.sP-pc-m-a	{ padding:2.5rem; }
+.sP-pc-s-a	{ padding:1.25rem; }
+.sP-pc-xs-a	{ padding:0.625rem; }
+
+.sM-pc-xl	{ margin-bottom:10rem; }
+.sM-pc-l	{ margin-bottom:5rem; }
+.sM-pc		{ margin-bottom:2.5rem; }
+.sM-pc-s	{ margin-bottom:1.25rem; }
+.sM-pc-xs	{ margin-bottom:0.625rem; }
+
+.sM-pc-xl-r	{ margin-right:10rem; }
+.sM-pc-l-r	{ margin-right:5rem; }
+.sM-pc-m-r	{ margin-right:2.5rem; }
+.sM-pc-s-r	{ margin-right:1.25rem; }
+.sM-pc-xs-r	{ margin-right:0.625rem; }
+
+.sM-pc-xl-l	{ margin-left:10rem; }
+.sM-pc-l-l	{ margin-left:5rem; }
+.sM-pc-m-l	{ margin-left:2.5rem; }
+.sM-pc-s-l	{ margin-left:1.25rem; }
+.sM-pc-xs-l	{ margin-left:0.625rem; }
+
+.sM-pc-xl-t	{ margin-top:10rem; }
+.sM-pc-l-t	{ margin-top:5rem; }
+.sM-pc-m-t	{ margin-top:2.5rem; }
+.sM-pc-s-t	{ margin-top:1.25rem; }
+.sM-pc-xs-t	{ margin-top:0.625rem; }
+
+.sM-pc-xl-a	{ margin:10rem; }
+.sM-pc-l-a	{ margin:5rem; }
+.sM-pc-m-a	{ margin:2.5rem; }
+.sM-pc-s-a	{ margin:1.25rem; }
+.sM-pc-xs-a	{ margin:0.625rem; }
+
+.clear-sp { clear:none; }
+.clear-pc { clear:both; }
+
+.breadthScrollBox{
+	overflow:visible;
+	width:auto;
+}
+
+/* =======================================
+
+	Parts CSS Wide_Tablet
+
+========================================== */
+
+/* Img
+------------------------------------------ */
+#wrapper img.rightBox{ width:auto; }
+#wrapper img.leftBox{ width:auto; }
+
+
+
+
+} /* 768px以上で適用される　レイアウトの指定　ここまで */
+/* ===================================================================================================================================================================================================
+
+	1200px以上で適用される　レイアウトの指定(パソコン用)
+
+=================================================================================================================================================================================================== */
+
+@media print, screen and (min-width: 1200px) {
+body { font-size: 1.6rem;/* 16px */ }
+body { min-width:1200px;}
+.inBase { width: 1200px; }
+
+
+
+
+
+
+
+
+} /* 1200px以上で適用される　レイアウトの指定　ここまで */
+
+
+

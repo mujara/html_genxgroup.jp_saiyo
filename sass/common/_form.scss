@@ -1,0 +1,127 @@
+@use "../_setting" as s;
+
+#mailform  {
+  @include s.media(m){
+    display:block;
+  }
+  input {
+    border:1px solid #ccc;
+    width:95% !important;
+    min-height:30px;
+    display:block;
+    outline: none;
+    vertical-align:middle;
+
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    -ms-border-radius:3px;
+    border-radius:3px;
+  }
+  input[type=radio] {
+    display:inline;
+    width:1em !important;
+  }
+  input[type=checkbox] {
+    display:inline;
+    width:1em !important;
+  }
+  input[type=submit] {
+    display:inline-block;
+    padding:0.5em 2em;
+    background:s.$colorType02;
+    margin:0 0 20px;
+    cursor: pointer;
+    color:#FFF;
+    font-size:1.2em;
+    @include s.media(m){
+      width:auto !important;
+    }
+  }
+  input[type=reset] {
+    background:none;
+    padding:0.8rem;
+    background:#F3DCEC;
+    margin:0 0 20px;
+    cursor: pointer;
+  }
+  textarea{
+    border:1px solid #ccc;
+    width:95% !important;
+    min-height:30px;
+    display:block;
+    margin-bottom:15px;
+    margin-top:5px;
+    outline: none;
+
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    -ms-border-radius:3px;
+    border-radius:3px;
+  }
+  dl{
+    display:block;
+    dt{
+      margin:0 0 0.3em;
+      font-size:1.2em;
+      @include s.media(m){
+        width:30%; 
+        float:left; 
+        text-align:right;
+        clear:both;
+        margin:0 0 0.8rem;
+        font-size:1em;
+      }
+      label{
+        @include s.media(m){
+          padding:0.8rem 20px; 
+          display:block;
+        }
+      }
+    }
+    dd{ 
+      line-height:2em; 
+      padding:0 0 15px; 
+      margin:0 0 0.8rem; 
+      border-bottom:#E8E8E8 solid 1px;
+      display:block; 
+      @include s.media(m){
+        width:65%; 
+        float:left; 
+        padding:0 0.8rem 0.8rem 0.8rem;
+        border-bottom:none;
+      }
+    }
+    &.--lastChild dd{
+      border-bottom:none;
+    }
+  }
+}
+
+.wpcf7-radio{
+  @include s.media(m){
+    margin-top:0.3em;
+    display:block;
+  }
+}
+.article #mailform p{
+  margin-bottom:0;
+}
+.article #mailform dl{
+  margin-top:1em;
+}
+
+#mailform dl dt .required{
+  color:#FFF;
+  display:inline-block;
+  font-size:0.8em;
+  background:s.$colorType05;
+  float:right;
+  padding:0.1em 0.5em;
+  border-radius:0.3em;
+  margin-left:0.5em;
+  @include s.media(m){
+    font-size:0.7em;
+  }
+}

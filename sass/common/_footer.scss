@@ -1,0 +1,140 @@
+@use "../_setting" as s;
+
+#footer {
+	clear: both;
+	display:block;
+}
+
+.wideMapBox + #footer{
+	margin-top:-8px;
+	@include s.media(m){
+		margin-top:-8px;
+	}
+}
+
+
+.footer__image {
+	display:none;
+	font-size:0;
+	@include s.media(m){
+		display:block;
+	}
+	figure{
+		display:inline-block;
+		width:20%;
+		img{
+			width:100%;
+		}
+	}
+}
+
+
+.footer__link {
+	display:block;
+	@include s.media(m){
+		margin-bottom:1.5em;
+	}
+	dt{
+		a{
+			display:block;
+			color:s.$colorType02;
+			font-size:1.1em;
+			font-weight:bold;
+			@include s.media(m){
+				margin-bottom:0.5em;
+			}
+		}
+	}
+	dd{
+		padding:0.5em 1em 0.5em 0;
+		@include s.media(m){
+			padding:0;
+		}
+		a{
+			font-size:1.1em;
+			@include s.media(m){
+				font-size:0.9em;
+			}
+			display:block;
+		}
+		ul{
+			padding-left:1em;
+			font-size:0.95em;
+			@include s.media(xl){
+				padding-left:1em;
+			}
+			li{
+				padding-top:0.5em;
+				padding-bottom:0.5em;
+				@include s.media(m){
+					padding-top:0;
+					padding-bottom:0;
+				}
+			}
+		}
+	}
+	&.--type02{
+		dt{
+			a{
+				display:block;
+				color:s.$colorType02;
+				font-size:1.1em;
+				font-weight:bold;
+			    display: block;
+			    padding : 0.9em 1em;
+			    background :#FFF;
+				width:110%;
+				margin-left:-5%;
+				border-bottom:#deddda solid 1px;
+				@include s.media(m){
+					width:auto;
+					margin-bottom:0.5em;
+			    	padding : 0;
+			    	background :none;
+					margin-left:0;
+					border-bottom:none;
+				}
+			}
+		}
+	}
+	&.--type03{
+		dt{
+			display:none;
+			@include s.media(m){
+				display:block;
+			}
+		}
+	}
+}
+
+
+.footer__navi {
+	width:100%;
+	border-bottom:#999999 dotted 1px;
+	display:block;
+		@include s.media(m){
+				border-left:#999999 solid 1px;
+				border-bottom:none;
+				padding:0 0 0 1em;
+				margin-left:-2em;
+		}
+	li{
+		padding:5px 0;
+		border-top:#999999 dotted 1px;
+		@include s.media(m){
+			padding:0 0 5px;
+			border:none;
+		}
+		a{
+			font-size:0.9em;
+			color:#53526C;
+			text-decoration:none;
+			&:before {
+				content:"\03e  ";
+			}
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+}

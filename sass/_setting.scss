@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// ==================================
+//　サイトの基本設定　変数
+// ==================================
+
+// 色関係の設定 -----------------------
+	$colorType01: #fdfcf8;	//ベースカラー
+	$colorType02: #ff6b00;	//メインカラー オレンジ
+	$colorType03: #000;	//アクセントカラー　黒
+	$colorType04: #000;	//アクセントカラー2
+	$colorType05: #bc0a0a;	//強調
+
+	$color-link: #808080;	//リンクカラー
+	$color-link-l: #ccc;	//リンクカラー薄い
+	$color-link-d: #000;	//リンクカラー濃い
+
+// フォント関係の設定 -----------------------
+	$sansSerif: "メイリオ","Meiryo","ＭＳ Ｐゴシック","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3",sans-serif;
+	$serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+// 余白設定 -----------------------
+	$spaceSize: 1.8rem;
+
+// ブレイクポイント -----------------------
+	$breakpoints: (
+		xs:"print, screen and (min-width: 321px)",
+		s:"print, screen and (min-width: 576px)",
+		m:"print, screen and (min-width: 768px)",
+		l:"print, screen and (min-width: 992px)",
+		xl:"print, screen and (min-width: 1200px)",
+		xxl:"print, screen and (min-width: 1675px)",
+	);
+	@mixin media($breakpoint){
+		@media #{map-get($breakpoints,$breakpoint)}{
+			@content;
+		}
+	}
+
+// z-index 設定 -----------------------
+	$layer: (
+		modal: 100,
+		header: 20,
+		tooltip: 10,
+		default: 1
+	);
+
+// ページ個別設定 -----------------------
+	$pageNameList: company, contact;

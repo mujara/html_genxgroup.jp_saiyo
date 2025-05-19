@@ -1,0 +1,51 @@
+@use "../_setting" as s;
+
+#header {
+	position: relative;
+    transition: .3s;
+}
+
+.header {
+    &__headTop ul li{
+		font-size:0.6em;
+		display:block;
+		text-align:center;
+		padding:5px 0 0;
+		@include s.media(m){
+			font-size:0.7em;
+			width:60%;
+			float:left;
+			padding:5px 0;
+			text-align:left;
+		}
+	}
+    &__siteTitleBox {
+		display:block;
+	}
+    &__siteTitle {
+		width:17em;
+		padding:0 ;
+		position:absolute;
+		top:1.5em;
+		left:1.5em;
+		@include s.media(m){
+			width:20em;
+			padding:0 ;
+			position:absolute;
+			top:3em;
+			left:3em;
+		}
+		@include s.media(xxl){
+			width:25em;
+		}
+		img{
+			width:100%;
+		}
+	}
+}
+
+#home .header__siteTitleBox dt a:after{
+	@include s.media(m){
+		content: none;
+	}
+}
